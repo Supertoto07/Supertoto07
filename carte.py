@@ -4,10 +4,11 @@ import os
 import sys
 import json
 
-def tracer_trajet(gares):
+def tracer_trajet(gares, output_file):
     """
-    Trace un trajet sur une carte et l'ouvre dans le navigateur.
+    Trace un trajet sur une carte et l'enregistre dans un fichier HTML.
     :param gares: Dictionnaire contenant le nom des gares et leurs coordonnées (latitude, longitude).
+    :param output_file: Chemin où enregistrer le fichier HTML de la carte.
     """
     if not gares:
         print("Le dictionnaire des gares est vide.")
@@ -42,11 +43,7 @@ def tracer_trajet(gares):
     ).add_to(m)
 
     # Sauvegarder la carte dans un fichier HTML
-    file_path = "carte_trajet.html"
-    m.save(file_path)
-
-    # Ouvrir la carte dans le navigateur
-    webbrowser.open('file://' + os.path.realpath(file_path))
+    m.save(output_file)
 
 def main():
     if len(sys.argv) < 2:
@@ -57,8 +54,11 @@ def main():
     gares_json = sys.argv[1]
     gares = json.loads(gares_json)
 
+    # Chemin fixe pour le fichier de sortie
+    output_file = r"F:\NSI\M.MAURIN\projet\trophé_NSI\carte_trajet.html"
+
     # Appeler la fonction pour tracer le trajet
-    tracer_trajet(gares)
+    tracer_trajet(gares, output_file)
 
 if __name__ == "__main__":
     main()
