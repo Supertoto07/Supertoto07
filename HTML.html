@@ -52,12 +52,11 @@
                 transform: translateY(0);
             }
         }
-
-        /* Nouvelle classe pour l'image */
+        
         .logo-image {
             max-width: 100%;
             height: auto;
-            margin-bottom: -50px; /* Ajout de l'espace entre l'image et le texte */
+            margin-bottom: -50px; 
         }
 
         .account-icon {
@@ -245,27 +244,26 @@
             position: absolute;
             top: 0;
             right: 0;
-            width: 81vw; /* largeur de la carte */
+            width: 81vw; 
             height: 100vh;
             background: url('carte_trajet.html') no-repeat center center;
             background-size: cover;
             z-index: 1;
         }
         
-        /* Media Queries pour rendre le design responsive */
         @media (max-width: 768px) {
             body {
-                flex-direction: column; /* Passer en colonne pour les petits écrans */
+                flex-direction: column; 
             }
 
             .container {
-                width: 90%; /* Laisser la container plus large sur mobile */
+                width: 90%; 
                 margin: 0 auto;
-                height: auto; /* La hauteur peut être flexible sur les petits écrans */
+                height: auto; 
             }
 
             .map-container {
-                width: 100%; /* La carte occupe toute la largeur sur mobile */
+                width: 100%; 
                 top: 0;
                 left: 0;
             }
@@ -278,21 +276,21 @@
 
         @media (max-width: 480px) {
             .logo {
-                font-size: 28px; /* Réduire la taille du logo sur les petits écrans */
+                font-size: 28px; 
             }
 
             button {
-                font-size: 14px; /* Réduire la taille du texte du bouton */
+                font-size: 14px; 
             }
 
             .container {
-                width: 95%; /* Réduit la largeur de la container sur petits écrans */
+                width: 95%; 
                 padding: 10px;
             }
         }
     </style>
     <script>
-        //code JavaScript pour la géolocalisation et la recherche de villes
+
     </script>
 </head>
 <body>
@@ -320,10 +318,10 @@
         </div>
         <div class="radio-group">
             <label>
-                <input type="radio" name="route-option" id="least-cost" /> Trajet le moins coûteux
+                <input type="radio" name="route-option" id="least-cost" /> 
             </label>
             <label>
-                <input type="radio" name="route-option" id="shortest-route" /> Trajet le plus court
+                <input type="radio" name="route-option" id="shortest-route" /> 
             </label>
         </div>
         <button onclick="executeCode()">Rechercher l'itinéraire</button>
